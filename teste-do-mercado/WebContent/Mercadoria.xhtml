@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+ 
+       <link rel="stylesheet" type="text/css" href="Estilo.css" /> 
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<title>Gestão de Mercadoria</title>
+</h:head>
+<h:body>
+
+<h1>Mercadoria</h1>
+	<h:form >
+	<center>
+	<p:messages/> 
+        	<h:panelGrid columns="2">	
+	
+			<h:outputText value="Código da Mercadoria : "/>
+		    <p:inputText  name="txtIdMer" value="${mercadoriaMB.mercadoriaAtual.codigoMercadoria}" readonly="true"/>
+		
+			<h:outputText value="Tipo da Mercadoria :"/>
+			<p:inputText name="txtTipoMer" value="${mercadoriaMB.mercadoriaAtual.tipoMercadoria}" size="60"/>
+				
+			<h:outputText value="Nome da Mercadoria :"/>
+			<p:inputText name="txtNomeMer" value="${mercadoriaMB.mercadoriaAtual.nomeMercadoria}" size="60" />
+		
+			<h:outputText value="Quantidade :"/>
+			<p:inputText name="txtQtd" value="${mercadoriaMB.mercadoriaAtual.qtdMercadoria}" />
+		
+			<h:outputText value="Preço :"/>
+			<p:inputText name="txtPreco" value="${mercadoriaMB.mercadoriaAtual.precoMercadoria}" />
+			
+			<h:outputText value="Tipo do Negócio :"/>				
+			<p:selectOneListbox name="listTipo" value="${mercadoriaMB.mercadoriaAtual.tipoNegocioMercadoria}" >
+				<f:selectItem itemLabel="Compra" itemValue="Com" />
+				<f:selectItem itemLabel="Venda" itemValue="Ven" />
+			</p:selectOneListbox>
+							
+	</h:panelGrid> 
+		<h:panelGrid columns="5"  >
+		   <p:commandButton   styleClass="button" value="Novo" name="cmdNovo"  icon="ui-icon-document-b" 
+		         action="${mercadoriaMB.limpar}"/>
+		   <p:commandButton styleClass="button"   value="Adicionar"  name="cmdAdicionar" icon="ui-icon-plus" 
+		         action="${mercadoriaMB.inserir}"/>
+		   <p:commandButton styleClass="button" value="Atualizar"  name="cmdAtualizar" icon="ui-icon-arrowrefresh-1-n" 
+		         action="${mercadoriaMB.atualizar}"/>
+		   <p:commandButton styleClass="button" value="Remover"    name="cmdRemover"  icon="ui-icon-close"
+		         action="${mercadoriaMB.remover}"/>
+		   <p:commandButton  styleClass="button" value="Pesquisar"  name="cmdPesquisar" icon="ui-icon-search" 
+		         action="${mercadoriaMB.pesquisar}"/>
+		</h:panelGrid >			
+  </center>
+  </h:form> 
+
+</h:body>
+
+
+</html>

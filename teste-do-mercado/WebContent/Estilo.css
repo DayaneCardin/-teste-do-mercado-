@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+body {
+	background-image:url("fundo.png");
+	background-repeat: repeat-x;
+	font: arial;	
+}
+
+h1{
+	 font:"Comic Sans MS", cursive;
+	 font-size: 30px;
+	 font-style: italic;
+	 color: blue;
+	 text-align: center;	
+}
+
+ form .button
+{
+	border-radius: 15px;
+	background-color: #009900;
+	box-shadow: inset 0 2px 5px #fff, 0 2px 3px #666;
+}
+form .formulario
+{
+	 text-align: center;
+}
